@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:simple_todo/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  var _controller = TextEditingController();
+  final _controller = TextEditingController();
   List toDoList = [
-    ["Hacer ejercicio"],
-    ["Hacer un cafe"],
-    ['Hacer tarea app moviles'],
-    ['Crear un pipeline'],
+    ['Cocinar', true],
+     ['To do app ITLA', true],
+    ['To do pipeline ITLA', true],
+    ['To go english inmersion', false],
+    ['To do workout', false],
+    ['hacer tarea', true],
+    ['Explore Firebase', false],
   ];
 
   void checkBoxChanged(int index) {
@@ -39,12 +42,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 212, 228, 230),
+      backgroundColor: const Color.fromARGB(255, 244, 244, 255),
       appBar: AppBar(
         title: const Text(
           'Lista de tareas',
         ),
-        backgroundColor: const Color.fromARGB(255, 2, 16, 41),
+        backgroundColor: const Color.fromARGB(255, 15, 41, 112),
         foregroundColor: Colors.white,
       ),
       body: ListView.builder(
@@ -70,18 +73,18 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: _controller,
                   decoration: InputDecoration(
-                    hintText: 'Agregar nueva tarea',
+                    hintText: 'Agregar tarea',
                     filled: true,
-                    fillColor: const Color.fromARGB(255, 235, 236, 237),
+                    fillColor: const Color.fromARGB(255, 205, 215, 242),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: const Color.fromARGB(255, 2, 16, 41),
+                        color: Color.fromARGB(255, 220, 228, 250),
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: const Color.fromARGB(255, 2, 16, 41),
+                        color: const Color.fromARGB(255, 11, 31, 84),
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
